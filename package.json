@@ -1,0 +1,44 @@
+{
+  "name": "xlv-vue-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "core-js": "^2.6.5",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "serve-static": "^1.14.1",
+    "swagger-ui": "^3.23.11",
+    "vue": "^2.6.10",
+    "vue-clipboard2": "^0.3.1",
+    "vue-progressbar": "^0.7.5",
+    "vue-router": "^3.0.3",
+    "vue-sweetalert2": "^2.1.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

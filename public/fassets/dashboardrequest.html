@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Open Banking</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fa/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="apptint">
+  <div class="page-container clearfix">
+     <section class="page-sidebar sidebardashboard appblue mh100">
+      <div class="sidebarcontentdashboard">
+          <div class="appbrand dbmod">
+              <img src="log2.svg" alt="">
+          </div>
+          <div class="sidebarmenu"> 
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="icondb.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft">
+                  <a href="#" class="sidebarmenulink">Dashboard</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item active clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="iconapi.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="#" class="sidebarmenulink">API Settings</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="iconprofile.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="#" class="sidebarmenulink">Profile</a>
+                </span>
+              </div>
+            </div>
+      </div>
+     </section>
+     <section class="page-main maindashboard mh100">
+      <div class="dashboardmenu clearfix">
+        <div class="menupane fright">
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">Documentation</a>
+          </span>
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">About Us</a>
+          </span>
+          <span class="menupane-item">
+            <span class="menupane-icon">
+              <img src="logout.svg" alt="">
+            </span>
+            <a href="#" class="menupanelink">Log out</a>
+          </span>
+        </div>
+      </div>
+      <div class="dashboardcontent">
+        <div class="profilemast clearfix">
+          <div class="mastcard mc33 mcpr6 fleft">
+            <div class="card cardp25 clearfix">
+              <div class="card-img fleft">
+                <img src="apicardicon.svg" alt="">
+              </div>
+              <div class="card-content cardcontentp20 fleft">
+                <div class="card-content-title">
+                  <span class="cctc">API CLIENT</span>
+                </div>
+                <div class="card-content-subtitle">
+                  <span class="ccsc">1930303</span>
+                </div>
+                <!-- <div class="card-content-subtitle">
+                    <span class="ccsc">florence@deedee.com</span>
+                  </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="mastcard mc33 mcpr3 mcpl3 fleft">
+              <div class="card cardp25 clearfix">
+                <div class="card-img fleft">
+                  <img src="datetimeicon.svg" alt="">
+                </div>
+                <div class="card-content cardcontentp20 fleft">
+                  <div class="card-content-title">
+                    <span class="cctc">DATE AND TIME</span>
+                  </div>
+                  <div class="card-content-subtitle">
+                    <span class="ccsc">8 September, 2019. 09:47 pm</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="mastcard mc33 mcpl6 fleft">
+            <div class="card cardp25 clearfix">
+              <div class="card-img fleft">
+                <img src="ipaddicon.svg" alt="">
+              </div>
+              <div class="card-content cardcontentp20 fleft">
+                <div class="card-content-title">
+                  <span class="cctc">IP address</span>
+                </div>
+                <div class="card-content-subtitle">
+                  <span class="ccsc">155.76.61.555</span>
+                </div>
+                <!-- <div class="card-content-subtitle">
+                    <span class="ccsc">florence@deedee.com</span>
+                  </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="contentcards clearfix" >
+            <div class="contentcard mc50 mcpr10 fleft">
+                <div class="contentcard-title">
+                  Request
+                </div>
+                <div class="contentcard-body reqres clearfix">
+                    <pre id="reqpre"></pre>
+                </div>
+            </div>
+            <div class="contentcard mc50 mcpl10 fleft">
+                <div class="contentcard-title">
+                  Response
+                </div>
+                <div class="contentcard-body reqres clearfix">
+                    <pre id="respre"></pre>
+                </div>
+            </div>
+        </section>
+      </div>
+     </section>
+  </div>
+
+<script type="text/javascript">
+var demojson = {
+    "opts": {
+        "hasOpenRange": true,
+        "country": "Nigeria",
+        "operator": "9mobile",
+        "iso": "ng",
+        "canOverride": true,
+        "msisdn": "2348180715229"
+    },
+    "products": [
+        {
+            "product_id": "MFIN-2-OR",
+            "openRange": true,
+            "openRangeMin": "50",
+            "openRangeMax": "200000",
+            "rate": 0.945,
+            "topup_currency": "NGN",
+            "currency": "NGN"
+        }
+    ]
+};
+function syntaxHighlight(json) {
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+var jstr = JSON.stringify(demojson, null, 2);
+document.querySelector('#reqpre').innerHTML = syntaxHighlight(jstr);
+document.querySelector('#respre').innerHTML = syntaxHighlight(jstr);
+</script>
+</body>
+</html>

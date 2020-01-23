@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Open Banking</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fa/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="apptint">
+  <div class="page-container clearfix">
+     <section class="page-sidebar sidebardashboard appblue mh100">
+      <div class="sidebarcontentdashboard">
+          <div class="appbrand dbmod">
+              <img src="log2.svg" alt="">
+          </div>
+          <div class="sidebarmenu"> 
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="icondb.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft">
+                  <a href="admin.html" class="sidebarmenulink">Dashboard</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item active clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="integsico.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="adminintegrators.html" class="sidebarmenulink">Integrators</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="integsuserico.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="adminusers.html" class="sidebarmenulink">Users</a>
+                </span>
+              </div>
+            </div>
+      </div>
+     </section>
+     <section class="page-main maindashboard mh100">
+      <div class="dashboardmenu clearfix">
+        <div class="menupane fright">
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">Documentation</a>
+          </span>
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">About Us</a>
+          </span>
+          <span class="menupane-item">
+            <span class="menupane-icon">
+              <img src="logout.svg" alt="">
+            </span>
+            <a href="#" class="menupanelink">Log out</a>
+          </span>
+        </div>
+      </div>
+      <div class="dashboardcontent">
+        <div class="profilemast clearfix">
+          <div class="mastcard mc100">
+            <div class="card clearfix">
+                <span class="btn btn-sm btn-pln-succ integratorstatus">Active</span>
+              <div class="card-img fleft">
+                <img src="profileimg.svg" alt="">
+              </div>
+              <div class="card-content fleft">
+                <div class="inteinforow">
+                    <section class="mc100cc">
+                        <div class="integinfocol">
+                            <div class="card-content-title">
+                                <span class="cctc">Full Name</span>
+                              </div>
+                              <div class="card-content-subtitle">
+                                <span class="ccsc">Florence Dairo</span>
+                              </div>
+                        </div>
+                        <div class="integinfocol">
+                            <div class="card-content-title">
+                                <span class="cctc">Company Name</span>
+                              </div>
+                              <div class="card-content-subtitle">
+                                <span class="ccsc">Florence Ltd</span>
+                              </div>
+                        </div>
+                      </section>
+                      <section class="mc100cc">
+                          <div class="integinfocol">
+                              <div class="card-content-title">
+                                  <span class="cctc">Email Address</span>
+                                </div>
+                                <div class="card-content-subtitle">
+                                  <span class="ccsc">fdairo@fd.net</span>
+                                </div>
+                          </div>
+                          <div class="integinfocol">
+                              <div class="card-content-title">
+                                  <span class="cctc">phone number</span>
+                                </div>
+                                <div class="card-content-subtitle">
+                                  <span class="ccsc">+234</span>
+                                </div>
+                          </div>
+                        </section>
+                        <section class="mc100cc">
+                            <div class="integinfocol">
+                                <div class="card-content-title">
+                                    <span class="cctc">Last Login</span>
+                                  </div>
+                                  <div class="card-content-subtitle">
+                                    <span class="ccsc">11 September, 2019 (5:45 AM)</span>
+                                  </div>
+                            </div>
+                            <div class="integinfocol">
+                                <div class="card-content-title">
+                                    <span class="cctc">Last Api call</span>
+                                  </div>
+                                  <div class="card-content-subtitle">
+                                    <span class="ccsc">05:35 PM</span>
+                                  </div>
+                            </div>
+                          </section>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <section class="contentcards clearfix">
+            <div class="contentcard mc50 mcpr10 fleft">
+                <div class="contentcard-title">
+                  Request
+                </div>
+                <div class="contentcard-body reqres clearfix">
+                    <pre id="reqpre">{
+  <span class="key">"opts":</span> {
+    <span class="key">"hasOpenRange":</span> <span class="boolean">true</span>,
+    <span class="key">"country":</span> <span class="string">"Nigeria"</span>,
+    <span class="key">"operator":</span> <span class="string">"9mobile"</span>,
+    <span class="key">"iso":</span> <span class="string">"ng"</span>,
+    <span class="key">"canOverride":</span> <span class="boolean">true</span>,
+    <span class="key">"msisdn":</span> <span class="string">"2348180715229"</span>
+  },
+  <span class="key">"products":</span> [
+    {
+      <span class="key">"product_id":</span> <span class="string">"MFIN-2-OR"</span>,
+      <span class="key">"openRange":</span> <span class="boolean">true</span>,
+      <span class="key">"openRangeMin":</span> <span class="string">"50"</span>,
+      <span class="key">"openRangeMax":</span> <span class="string">"200000"</span>,
+      <span class="key">"rate":</span> <span class="number">0.945</span>,
+      <span class="key">"topup_currency":</span> <span class="string">"NGN"</span>,
+      <span class="key">"currency":</span> <span class="string">"NGN"</span>
+    }
+  ]
+}</pre>
+                </div>
+            </div>
+            <div class="contentcard mc50 mcpl10 fleft">
+                <div class="contentcard-title">
+                  Response
+                </div>
+                <div class="contentcard-body reqres clearfix">
+                    <pre id="respre">{
+  <span class="key">"opts":</span> {
+    <span class="key">"hasOpenRange":</span> <span class="boolean">true</span>,
+    <span class="key">"country":</span> <span class="string">"Nigeria"</span>,
+    <span class="key">"operator":</span> <span class="string">"9mobile"</span>,
+    <span class="key">"iso":</span> <span class="string">"ng"</span>,
+    <span class="key">"canOverride":</span> <span class="boolean">true</span>,
+    <span class="key">"msisdn":</span> <span class="string">"2348180715229"</span>
+  },
+  <span class="key">"products":</span> [
+    {
+      <span class="key">"product_id":</span> <span class="string">"MFIN-2-OR"</span>,
+      <span class="key">"openRange":</span> <span class="boolean">true</span>,
+      <span class="key">"openRangeMin":</span> <span class="string">"50"</span>,
+      <span class="key">"openRangeMax":</span> <span class="string">"200000"</span>,
+      <span class="key">"rate":</span> <span class="number">0.945</span>,
+      <span class="key">"topup_currency":</span> <span class="string">"NGN"</span>,
+      <span class="key">"currency":</span> <span class="string">"NGN"</span>
+    }
+  ]
+}</pre>
+                </div>
+            </div>
+        </section>
+      </div>
+     </section>
+  </div>
+
+</body>
+</html>

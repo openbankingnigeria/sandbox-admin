@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Open Banking</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fa/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="apptint">
+  <div class="page-container clearfix">
+     <section class="page-sidebar sidebardashboard appblue mh100">
+      <div class="sidebarcontentdashboard">
+          <div class="appbrand dbmod">
+              <img src="log2.svg" alt="">
+          </div>
+          <div class="sidebarmenu"> 
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="icondb.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft">
+                  <a href="#" class="sidebarmenulink">Dashboard</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item active clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="iconapi.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="#" class="sidebarmenulink">API Settings</a>
+                </span>
+              </div>
+              <div class="sidebarmenu-item clearfix">
+                <span class="sidebarmenu-icon fleft">
+                  <img src="iconprofile.svg" alt="">
+                </span>
+                <span class="sidebarmenu-text fleft mupminus1">
+                    <a href="#" class="sidebarmenulink">Profile</a>
+                </span>
+              </div>
+            </div>
+      </div>
+     </section>
+     <section class="page-main maindashboard mh100">
+      <div class="dashboardmenu clearfix">
+        <div class="menupane fright">
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">Documentation</a>
+          </span>
+          <span class="menupane-item">
+            <a href="#" class="menupanelink">About Us</a>
+          </span>
+          <span class="menupane-item">
+            <span class="menupane-icon">
+              <img src="logout.svg" alt="">
+            </span>
+            <a href="#" class="menupanelink">Log out</a>
+          </span>
+        </div>
+      </div>
+      <div class="dashboardcontent">
+        <div class="profilemast clearfix">
+          <div class="mastcard mc50 mcpr10 fleft">
+            <div class="card cardp30 clearfix">
+              <!-- <div class="card-img fleft">
+                <img src="profileimg.svg" alt="">
+              </div> -->
+              <div class="card-content ccmarg0 fleft">
+                <div class="card-content-title">
+                  <span class="cctc">client Key</span>
+                </div>
+                <div class="card-content-subtitle">
+                  <span class="ccsc">1930303 <i class="far fa-copy"></i></span>
+                </div>
+                <div class="card-content-action ccac">
+                  <a href="#" class="btn btn-def btn-light-accent-shadowed"> 
+                    <span class="ccact">Generate Key</span> 
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mastcard mc50 mcpl10 fleft">
+              <div class="card cardp30 clearfix">
+                <!-- <div class="card-img fleft">
+                  <img src="profileimg.svg" alt="">
+                </div> -->
+                <div class="card-content ccmarg0 fleft">
+                  <div class="card-content-title">
+                    <span class="cctc">Secret Key</span>
+                  </div>
+                  <div class="card-content-subtitle">
+                    <span class="ccsc">238575930jfhfui8389q0 <i class="far fa-copy"></i></span>
+                  </div>
+                  <div class="card-content-action ccac">
+                    <a href="#" class="btn btn-def btn-danger"> <span class="ccact">Reset Key</span> </a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="contentcard">
+            <div class="contentcard-title">
+              OAUTH SETTINGS
+            </div>
+            <div class="contentcard-body clearfix"> 
+              <div class="profile-info-entry piw100">
+                  <div class="profileinputform">
+                      <form action="">
+                        <div class="inputs">
+                          <div class="input inputnomarg ilb iw50">
+                            <div class="inputlabel">
+                             Application Type:
+                            </div>
+                            <div class="inputcontrol">
+                              <input type="text" placeholder="">
+                            </div>
+                          </div>
+                          <div class="input ilb iw50">
+                            <div class="inputlabel">
+                              Name:
+                            </div>
+                            <div class="inputcontrol">
+                              <input type="text" placeholder="">
+                            </div>
+                          </div> 
+                          <div class="input">
+                              <div class="inputlabel">
+                                Restrictions:
+                                <span class="label-subtext">
+                                    Authorized JavaScript origins: For use with requests from a browser. This is the origin URl of the client application. It can’t contain a wildcard (https://*.example.com) or a path (https://exampl.com/subdir). If you’re using a nonstandard port, you must include it in the origin URL 
+                                </span>
+                              </div>
+                              <div class="inputcontrol iw50">
+                                <input type="text" placeholder="https://exampl.com">
+                                <span class="label-subtext lbsmt5">
+                                    Type the domain and press enter
+                                </span>
+                              </div>
+                            </div> 
+                            <div class="input inputnomarg ilb iw50">
+                                <div class="inputlabel">
+                                 Added Domains
+                                </div>
+                                <div class="inputcontrol inputsuc">
+                                  <input type="text" value="https://mycompany.com/subdir">
+                                  <i class="fas fa-trash delico"></i>
+                                </div>
+                              </div>
+                              <div class="input ilb iw50">
+                                <div class="inputlabel">
+                                  <!-- Name: -->
+                                </div>
+                                <div class="inputcontrol inputsuc">
+                                    <input type="text" value="https://mycompany.com/subdir">
+                                    <i class="fas fa-trash delico"></i>
+                                  </div>
+                              </div> 
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+     </section>
+  </div>
+</body>
+</html>

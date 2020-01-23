@@ -1,0 +1,67 @@
+.sandboxtext {
+  background: #DD6A2A;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 13px;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+
+.sandboxtextcontainer {
+  text-align: right;
+} 
+.openingintro {
+  color: #12986F;
+  font-size: 25px;
+  margin-top: 42px;
+  margin-bottom: 16px;
+}
+
+
+table.button.obsucc table td {
+  background: #12986F;
+border-radius: 5px; 
+  border: 0 solid #12986F;
+}
+
+.obmailfooter {
+  background: #213F7D;
+}
+
+table.header {
+  background: #f3f3f3;
+}
+
+table.header table.container {
+  background: #f3f3f3;
+}
+
+table.row p {
+  Margin-bottom: 35px;
+    line-height: 25px;
+}
+
+table.row p.sandboxtext {
+  margin-bottom: 0;
+}
+
+.obsubtext {
+  font-size: 12px;
+line-height: 14px;
+
+color: #FFFFFF;
+}
+
+.obsubtextcontainer {
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+.obsubtextimgcontainer {
+  width: 130px;
+}
+
+body{
+  padding-top: 20px;
+}
