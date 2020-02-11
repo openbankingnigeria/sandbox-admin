@@ -1,5 +1,8 @@
 import Axios from 'axios';
 
+console.log(process.env);
+Axios.defaults.baseURL = `${process.env.VUE_APP_API_BASE}`;
+
 function setup(setupConfig, VueInstance) {
   function makeRequest(method, url, data, _extraConfig) {
     const baseURL = this.config.BASE_URL;
@@ -10,7 +13,7 @@ function setup(setupConfig, VueInstance) {
 
     const payload = data || {};
     const extraConfig = _extraConfig || {};
-    const headers = (extraConfig.headers) || {};
+    const headers = extraConfig.headers || {};
     let requestPayload = {};
     if (this.config.default_headers_func) {
       this.config.default_headers = this.config.default_headers_func();
@@ -36,9 +39,10 @@ function setup(setupConfig, VueInstance) {
       headers: requestHeaders,
     };
     const shouldUseParams = {
-      get: 1, options: 1, delete: 1,
+      get: 1,
+      options: 1,
+      delete: 1,
     };
-
 
     if (shouldUseParams[method] || extraConfig.use_params) {
       extraConfig.params = { ...this.config.default_payload, ...payload };
@@ -51,16 +55,19 @@ function setup(setupConfig, VueInstance) {
       axiosArguments = [requestURL, requestConfig];
     }
 
-    //console.log(VueInstance, VueInstance.$Progress);
+    // console.log(VueInstance, VueInstance.$Progress);
     VueInstance.$Progress.start();
     const requestPromise = new Promise((resolve, reject) => {
-      Axios[method](...axiosArguments).then((response) => {
-        resolve(response);
-      }).catch((error) => {
-        reject(error);
-      }).finally( () => {
-        VueInstance.$Progress.finish();
-      });
+      Axios[method](...axiosArguments)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          reject(error);
+        })
+        .finally(() => {
+          VueInstance.$Progress.finish();
+        });
     });
     return requestPromise;
   }
@@ -88,7 +95,6 @@ function setup(setupConfig, VueInstance) {
   function del(config) {
     return this.makeRequest('delete', config.url, config.payload, config.config);
   }
-
 
   function Scaffold(config) {
     this.config = {
