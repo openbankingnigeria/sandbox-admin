@@ -1,0 +1,69 @@
+# Consumer Experience Guidelines
+
+The customer experience guidelines are perhaps the strictest of OBN requirements to TPPs. Note that these guidelines are to be followed by both intermediary and end-user providers. The objectives of the consumer experience guidelines are to:
+
+1. Define a minimum engagement framework or process for the consumer's interaction with Open Banking enabled systems
+2. Define critical elements of the consumer journey that are paramount to creating the desirable consumer experience, consistent across platforms
+3. Engender consumer trust with the system
+
+Elements of the consumer journey relevant to Open Banking commence at enrollment, accessing financial data, payments initiation, and strong authentication.
+
+### Design Principles <a href="consumerexperienceguidelines-designprinciples" id="consumerexperienceguidelines-designprinciples"></a>
+
+1. Simplicity: Open Banking functionality must be simple, unambiguous and direct. The language used to communicate prompts should not be overly legal or technical.
+2. Transparency: Customers should be acutely in-tune with each process they are undertaking, knowing the objective, where they started and wherein the process they are. It would also be helpful to inform, to a reasonable extent, what it would take to complete the process and what to expect as the outcome.
+3. Parity of Experience: Open banking TPPs should present largely consistent prompts (in number and order) especially where related to core processes such as registration, account access, consent, payment initiation, and authentication.
+4. Control: The customer should always be in and be given a sense of control over every process. While consent and access may be given initially without much thought or full understanding of the implications, the customer should be able to unceremoniously revoke such consent and access at all times. Any scheduled activities should include reasonable reminders of such activity if the customer wishes not to continue. Subject to specific use-case exemptions, customers should be notified of and subscribe to any new services or process especially those with impact on their account funds.
+
+### Consumer Journey <a href="consumerexperienceguidelines-consumerjourney" id="consumerexperienceguidelines-consumerjourney"></a>
+
+A customer's Open Banking journey commences with requesting access, through the TPP interface, to their account information within a specified AP domain. The AP is expected to seek consent from the user through any established channels, a process which is referred to within this section as Strong Authentication.
+
+Due to the varying nature of consent channels, it is possible in certain cases that the request for access from the TPP to the AP will not complete synchronously. Therefore, TPPs should factor the waiting time into the user experience and implement APIs that check the consent status after the initial request period.
+
+Following authentication of the user by the AP and authorization of the TPP's access to the user account information, the TPP is required to present an account access handle (e.g. a widget, button, link, or text indicator) within the consumer experience interface designating access to the consumers' accounts within the Apps domain.
+
+The user's subsequent interactions with this handle should be limited to managing permissions to the AP's account. Most other operations within the TPP domain are expected to "pass-through" by interacting with this handle as if directly accessing the consumer's account.
+
+### Registration <a href="consumerexperienceguidelines-registration" id="consumerexperienceguidelines-registration"></a>
+
+User experience during registration is largely determined by the underlying channel technology and process each pair of TPP and AP have agreed and implemented. This standard requires the process to be consistent although differences in channel technologies and approach may result in slight variations.
+
+At the setup stage, TPPs are expected to register their applications within AP domains using the relevant Registration APIs or via manual setup depending on which the AP is able to provide. TPPs may request as many permissions as they may require within the matrix of object permissions allowed in the APIs. APs however, reserves the right to approve, reject and revoke permissions as they deem fit driven by business and other related considerations. Concluding this process, a registration record should indicate functions in which the TPP is limited to performing within the AP domain. APs are encouraged to increase the responsibility and obligations of TPPs within contracts synonymously with the extent of access requested within the AP domain to deter access to unnecessary features that do not fall within the business services of the TPP or might be purely prospective at the time of setup. Registration records can be easily updated to reflect new, dropped or revoked permissions as contracting evolves subject to agreed terms.
+
+To onboard a customer, a registration record is also expected to be lodged with the AP by the TPP including the minimum customer information as set out by the mandatory fields of the relevant registration API, but distinctly indicating the linked Account Number. A TPP cannot lodge more than one registration record with the same account number. This process starts with the customer visiting the TPP interface, selecting an AP and indicating their credentials within the AP's domain. The Authentication mechanism set up between with TPP and AP would determine the experience and mode of completion of this process. Guidelines for authentication are provided in the next section. An active registration record will be created on behalf of the customer to be managed exclusively by the TPP once authentication has been performed. However, no permissions have been assigned to this record until explicit assignments are initiated by the customer which will require _authorization_.
+
+### Authentication <a href="consumerexperienceguidelines-authentication" id="consumerexperienceguidelines-authentication"></a>
+
+Authentication within this context provides a mechanism for users to verify their identities to the APs to permit linking the indicated account within the requesting TPP's domain. APs are required to provide authentication mechanisms in whichever form they support and available technology permits, but must conform in principle and architecture to the following requirements for authentication:
+
+1. **Authentication must happen over pre-authorized channels** – this means that the user must have priory authorized or consented to receiving sensitive account information over this medium and also designated certain levels of authority to electronic communication received by the AP over such channels e.g. if email is one such channel, an email indemnity must have been authorized by the customer prior to that channel used for consent in line with the regulations of the Central Bank of Nigeria. Other channels include SMS, USSD, Mobile Banking App and Internet banking.
+2. **User endpoint **_**should**_** be verified prior to use for authentication –** emails, phone numbers or other user endpoints must be verified using control information such as OTP verification prior to being used as a platform for Open Banking consent. To illustrate, if a user has signed up to mobile banking either via the Smart Phone App or USSD, it is assumed that the user's mobile number is a verified endpoint. Similar verification should be performed for the user's email address although the requirement for email is not as strict.
+
+Also popularly known as Second Factor Authentication or 2FA, strong authentication adopts these principles combined with eliciting confirmation of the customer's identity. The API documentation lists particulars that require such strong authentication. APs will initiate strong authentication via agreed/ implemented channels whenever access is requested to an AP account by a customer. Strong authentication mechanisms include:
+
+1. **Decoupled authentication** – where the AP employs known channels to initiate an "out-of-bound" request for the consumer's confirmation of the TPP access request. Channels include:
+   1. Mobile Banking App – the customer can be prompted with a listing of pending TPP permission requests and may be given control to enable/disable each TPP as required. This imbibes the strong authentication mechanism since the Mobile app sign-up process incorporates pre-enrolment, endpoint verification, and the customer would have to log in to access the menu.
+   2. Internet Banking App – same as mobile
+   3. USSD Banking – In this case, the customer would be directed within the TPP interface to visit the bank USSD menu, navigate to an "Open Banking" option and follow the prompts to approve their app request. APs may also implement USSD push interactions to the customer's registered mobile number to prompt for approval. In either case, verification information such as a mobile PIN is required to complete the process.
+   4. SMS – may only be used to inform the customer of the need to navigate to some other banking channel to complete the authentication.
+   5. Email – may be used for authorization if the customer has consented to email indemnity specifically for TPP Open Banking access.
+2. **AP Redirects -** over smart channels, and where supported by both the TPP and AP, TPPs may redirect to the authentication page/prompt of the AP for the customer to provide login credentials. This redirect may occur over browser to browser, app to browser, browser to app or In-app. The basic requirement is that customers are presented with identifying marks such as logo, colors of their APs with which they are familiar and help build trust. A simple way to achieve this is to scrape the internet or mobile banking login pages. In addition, the login requirements to authenticate the customer must not exceed or be different from their typical banking access requirements on the specific channel.
+
+Once customers are authenticated; the AP issues an access token to the TPP to be used exclusively by that TPP when accessing the customer's account. The user's registration with the AP is also marked as active at this point. Note that multiple accounts within an AP domain require a repeat of the Registration and Authentication process to map each account to a separate handle within the TPP application.
+
+### Authorization <a href="consumerexperienceguidelines-authorization" id="consumerexperienceguidelines-authorization"></a>
+
+Within the context of open banking, authorization is the process by which customers consent to TPPs accessing all or parts of their personal and financial records of authenticated AP account. TPP's are required to operate according to the following guidelines:
+
+1. Each account handle within the TPP's application should provide mechanisms for customers to immediately enable or revoke permissions to different particulars of their AP accounts.
+2. Each change in the user's selection should be proceeded with the generation of a new OAuth token to capture the change in scope, especially where the change is a reduction in the user's permissions list. Optionally, the AP may provide APIs for the TPP to also revoke the permissions at the AP's end before generating a new token.
+3. When prompting users for consent on the TPP's application, account particulars may be grouped for ease of presentation. For instance, all required particulars to facilitate a business function maybe group. However, upon selection, the TPP should provide sufficient information in the confirmation screen that captures (or makes available) the details of the particulars involved.
+4. Account particulars should map directly to user scopes detailed in Section 2.4 of this document. Scopes should be presented in friendly and easily understandable language that embodies the object, action, initiator (user or auto) and periodicity.
+5. TPP's are also required to send out notifications (via email, SMS or other agreed channels) to customers indicating any changes to permissions requested against their AP accounts for the user's keepsake.
+
+Following the user's request via the TPP application for certain scope permissions against their AP accounts, the user's AP is required to provide two (2) channels at the minimum by which the user can view, consent, decline or revoke permission requests. For instance, an AP could provide a page listing pending and approved TPP authorization requests within the Mobile or Internet Banking platforms.\
+If consent is given by the user for specific scope permissions, the records of such consent should be recorded along with a timestamp, an audit record capturing a transcript of the change in permissions scope and the point of initiation. Revocations should also be captured with similar detail. Consented scopes are updated within the AP's API-framework and subsequent token requests by the TPP on behalf of the user will include these scopes in the permitted scopes list along with embedding the permission into the generated access token. The AP may provide additional services to notify the TPP of the approved scopes so the TPP can proactively enable those functions within the user's profile instead of waiting for the next sign-on event.\
+APs should never honor requests for functions or particulars on behalf of a user where the consent for the scope has not been given by the user, or the period for which the consent was granted has expired. An appropriate decline response should be provided in such cases. If there is a timeout during an authorization request exchange, the TPP has the sole responsibility to repeat the function until a valid confirmation is received.
+
+![Figure 6.1. Registration, Authentication, and Authorization Flows](<../../.gitbook/assets/image (5).png>)

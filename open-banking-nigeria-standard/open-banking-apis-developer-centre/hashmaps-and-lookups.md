@@ -1,0 +1,5 @@
+# Hashmaps and Lookups
+
+Hashmaps and Lookups contain relatively static content throughout the API lifetime. This content is however crucial for processing such as a map of response codes to response descriptions. Relevant mappings are provided within the API specifications under the META Directory collection.
+
+Developers are advised to store this information in persisted format e.g. within a database, a database table or system file in a way that they can be dynamically updated and reloaded within their applications. For instance, a mapping reference called _**response\_code\_descriptions**_ can be created with response code to response description mapping as columns in a database table. This table can be called up at intervals and loaded into the application memory or upon an application restart. New definitions of response code and descriptions can simply be updated in this table if/when any updates arise. This structure is especially useful for self-defined mappings for which allowances have been provided in the specifications.
